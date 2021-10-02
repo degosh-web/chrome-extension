@@ -1,0 +1,14 @@
+body, .content {
+    background-color:#121212 !important;
+}
+
+input {
+    background-color: #18181C  !important;
+    color: #E2E2E2 !important;
+    border: 2px #3C4042 solid !important;
+    outline: none;
+}
+
+#logo {
+    content: url('../../imgs/logoDark.svg') !important;
+}

@@ -1,0 +1,206 @@
+{
+  "manifest_version": 2,
+  "name": "Degosh Extension",
+  "description": "Ready to cook",
+  "version": "1.5.7",
+  "options_page": "options/auth/auth.html",
+  "icons": {
+    "16": "imgs/icon.png",
+    "48": "imgs/icon.png",
+    "128": "imgs/icon.png"
+  },
+  "browser_action": {
+    "default_popup": "/popup/authPopup.html",
+    "default_icons": {
+      "16": "imgs/icon.png",
+      "48": "imgs/icon.png",
+      "128": "imgs/icon.png"
+    }
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "/additional/jquery-3.6.0.min.js",
+        "/modules/_webhook.js",
+        "/modules/_inject.js",
+        "/modules/yookassa.js"
+      ]
+    },
+    {
+      "all_frames": true,
+      "matches": [
+        "https://sneakerhead.ru/*",
+        "http://sneakerhead.ru/*",
+        "https://widget.cloudpayments.ru/",
+        "<all_urls>"
+      ],
+      "js": [
+        "/modules/sneakerhead.js"
+      ]
+    },
+    {
+      "all_frames": true,
+      "matches": ["https://www.adidas.ru/*", "https://yoomoney.ru/*","https://www.adidas.com/*"],
+      "css": [
+        "/additional/iziToast.min.css"
+      ],
+      "js": [
+        "/modules/adidas.js",
+        "/additional/iziToast.min.js"      ]
+    },
+    {
+      "all_frames": true,
+      "matches": [
+        "https://*/cart/*",
+        "https://*/*/checkouts/*",
+        "https://*/*/checkouts/*/*/*",
+        "https://*.shopifycs.com/*",
+        "https://*/*/orders/*",
+        "https://*/*/orders/*/*"
+      ],
+      "js": [
+        "/modules/shopify.js"
+      ]
+    },
+    {
+      "all_frames": true,
+      "matches": [
+        "https://eu.kith.com/*",
+        "http://eu.kith.com/*",
+        "https://kith.com/*",
+        "http://kith.com/*"
+      ],
+      "js": [
+        "/modules/kith.js"
+      ]
+    },
+    {
+      "all_frames": true,
+      "matches": [
+        "https://stripe.com/*",
+        "https://checkout.stripe.com/*",
+        "https://stripe.dev/elements-examples/*",
+        "https://js.stripe.com/*/*"
+      ],
+      "js": [
+        "/modules/stripe.js"
+      ]
+    },
+    {
+      "all_frames": true,
+      "matches": [
+        "https://www.lamoda.ru/*",
+        "http://www.lamoda.ru/*"
+      ],
+      "js": [
+        "/modules/lamoda.js"
+      ]
+    },
+    {
+      "all_frames": true,
+      "matches": [
+        "https://beliefmoscow.com/*",
+        "https://pay.alfabank.ru/*"
+      ],
+      "js": [
+        "/modules/belief.js"
+      ]
+    },
+    {
+      "all_frames": true,
+      "matches": [
+        "https://www.sotostore.com/*",
+        "http://www.sotostore.com/*",
+        "https://live.adyen.com/*",
+        "http://live.adyen.com/*"
+      ],
+      "js": [
+        "/modules/soto.js"
+      ]
+    },
+    {
+      "all_frames": true,
+      "matches": [
+        "https://www.bstn.com/*",
+        "https://checkoutshopper-live.adyen.com/*"
+      ],
+      "js": [
+        "/modules/bstn.js"
+      ]
+    },
+    {
+      "all_frames": true,
+      "matches": [
+        "https://www.nakedcph.com/*",
+        "http://www.nakedcph.com/*",
+        "https://checkoutshopper-live.adyen.com/*",
+        "http://checkoutshopper-live.adyen.com/*"
+      ],
+      "js": [
+        "/modules/naked.js"
+      ]
+    },
+    {
+      "all_frames": true,
+      "matches": [
+        "https://www.supremenewyork.com/*",
+        "http://www.supremenewyork.com/*"
+      ],
+      "js": [
+        "/modules/supreme.js"
+      ]
+    },
+    {
+      "all_frames": true,
+      "matches": [
+        "https://www.solebox.com/*",
+        "http://www.solebox.com/*",
+        "https://www.saferpay.com/VT2/mpp/*",
+        "http://www.saferpay.com/VT2/mpp/*",
+        "http://www.saferpay.com/*"
+      ],
+      "js": [
+        "/modules/solebox.js"
+      ]
+    },
+    {
+      "all_frames": true,
+      "matches": [
+        "https://www.street-beat.ru/*",
+        "http://www.street-beat.ru/*",
+        "https://street-beat.ru/*",
+        "http://street-beat.ru/*"
+      ],
+      "js": [
+        "/modules/streetbeat.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "proxy",
+    "storage",
+    "cookies",
+    "activeTab",
+    "*://*/*",
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "webNavigation",
+    "unlimitedStorage",
+    "<all_urls>"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';",
+  "web_accessible_resources": [
+    "*.json"
+  ]
+}

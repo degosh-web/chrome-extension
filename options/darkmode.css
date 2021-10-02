@@ -1,0 +1,179 @@
+body {
+    background-color: #18181C !important;
+}
+
+button {
+    background-color: #18181C !important;
+    border: 2px #3C4042 solid !important;
+    outline: none;
+}
+
+button:hover {
+    background-color: #2F3640;
+}
+
+.iziToast-close {
+    background-color: transparent !important;
+    border: 0 !important;
+}
+
+.iziToast-close:hover {
+    border: 0 !important;
+}
+
+a, p, label, button, h1, h2, h3, h4 {
+    color: #E2E2E2;
+}
+
+input {
+    color: #E2E2E2;
+}
+
+.contentProfiles {
+    background-color: #121212 !important;
+}
+
+.profile {
+    background-color: #18181C !important;
+    color: white !important;
+}
+
+#cardInp {
+    background-color: #18181C !important;
+}
+
+.contentSettings {
+    background-color: /*#2B2F33*/#121212  !important;
+}
+
+.category, .module {
+    background-color: #18181C !important;
+    border: 2px #3C4042 solid !important;
+}
+
+/*
+.category:hover, .module:hover {
+	transform: scale3d(0.97, 0.97 0.97);
+}
+*/
+
+#categoriesBar, #siteModulesBar {
+    background-color: #121212 !important;
+}
+
+.selected {
+    color: #E2E2E2 !important;
+    background-color: #121212 !important;
+    border: 2px #121212 solid !important;
+}
+
+.selected:hover {
+    border: 2px #808080 solid !important;
+    transition: .2s;
+}
+
+.placeholder, .setting {
+    background-color:#121212 !important;
+}
+
+[size] {
+    color: white !important;
+}
+
+.sizeOn {
+    border-color: #3beb4dab !important;
+}
+
+.selected::after {
+    background: url("../imgs/arrow-down-dark.svg") !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+}
+
+.select-box {
+    background-color:transparent !important;
+}
+
+.container-options {
+    background-color:#121212 !important;
+    color: #E2E2E2 !important;
+}
+
+#adidas {
+    background-image: url('../../imgs/adidasDark.svg') !important;
+}
+
+#sneakerhead {
+    background-image: url('../../imgs/sneakerheadDark.svg') !important;
+}
+
+#soto {
+    background-image: url('../../imgs/sotoDark.svg') !important;
+}
+
+#naked {
+    background-image: url('../../imgs/nakedDark.svg') !important;
+}
+
+#belief {
+    background-image: url('../../imgs/beliefDark.svg') !important;
+}
+
+#solebox{
+    background-image: url('../../imgs/SoleBoxDark.svg') !important;
+}
+
+#yoomoney {
+    background-image: url('../../imgs/yoomoneyDark.svg') !important;  
+}
+
+#streetbeat {
+    background-image: url('../../imgs/streetbeatDark.svg') !important;  
+}
+
+#lamoda {
+    background-image: url('../../imgs/lamodaDark.svg') !important;  
+}
+
+.normalFooter {
+    color: #E2E2E2;
+    font-weight: 100;
+    font-style: italic;
+    opacity: 0.35;
+}
+
+#exitAppYesBtn:hover {
+    transform: scale(0.98);
+    transition: .20s;
+    border: rgb(243, 35, 35) 2px solid !important;
+    opacity: 1 !important;
+    transition: 0.2s;
+}
+
+/*dark modal stuff*/
+
+.modalContent {
+    background-color:#121212 !important;
+    margin: 15% auto; /* 15% from the top and centered */
+	padding: 20px;
+	border: 2px #ECECED solid;
+	width: 50%; /* Could be more or less, depending on screen size */
+
+	border-radius: 10px;
+
+	display: flex;
+	flex-direction: column;
+    transition: 0.2s;
+}
+
+#modalTextDiv p {
+	color: #E2E2E2 !important;
+}
+
+.modalBtn {
+    background-color: #18181C  !important;
+    border: 2px #3C4042 solid !important;
+    color: #E2E2E2;
+    outline: none;
+    transition: 0.2s;
+}

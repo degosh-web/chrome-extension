@@ -1,0 +1,79 @@
+body {
+    /*background-color: #18181C !important;*/
+    background-color:#121212 !important;
+}
+
+.content {
+    background-color:#121212 !important;
+}
+
+button {
+    background-color: #18181C  !important;
+    border: 2px #3C4042 solid !important;
+    outline: none;
+}
+
+button:hover {
+    background-color: #2F3640 !important;
+}
+
+a, p, label, button, h1, h2, h3, h4 {
+    color: #E2E2E2;
+}
+
+#chooseProfile, .container-options {
+    color: white !important;
+/*    background-color: #2B2F33 !important;*/
+}
+
+.selected {
+    background-color: #18181C  !important;
+    color: #E2E2E2;
+    border: 2px #3C4042 solid !important;
+    outline: none;
+}
+
+
+#logo {
+    content: url('../imgs/logoDark.svg');
+}
+
+.selected::after {
+    background: url("../imgs/arrow-down-dark.svg") !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+}
+
+.select-box .option{
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+
+.selected:hover {
+    border: 2px #c0bfbf solid !important;
+    transition: .2s;
+}
+
+.select-box .option:hover {
+	transform: scale(0.98);
+    transition: .2s;
+    opacity: 0.4;
+}
+
+.select-box {
+    background-color:transparent !important;
+}
+
+input {
+    color: #E2E2E2 !important;
+}
+
+.container-options {
+    background-color:#121212 !important;
+    border: 2px #ECECED  solid !important;
+	overflow-y: visible;
+	background-color: #F5F6F8;
+	z-index: 1;
+	transition: 0.4s;
+}

@@ -1,0 +1,120 @@
+.contentSettings {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    /*это для размещения footer*/
+    position: relative;
+}
+
+#firstColumn, #secondColumn {
+    margin-top: 2.5%;
+    flex: 1;
+    height: 80%;
+    padding-left: 1%;
+    padding-right: 1%;
+    /*
+    justify-content: center;
+    align-items: center;
+    */
+}
+
+#firstColumn {
+    margin-left: 24%; /* и вот это убрало дергание*/
+}
+
+#secondColumn {  
+    margin-right: 24%; 
+}
+
+.settingsColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    width: 94%; /*вот это убрало дергание*/
+    /*max-width: 391px;*/
+}
+
+.single {
+    justify-content: center;
+}
+
+.double {
+    justify-content: center;
+    gap: 15%;
+}
+
+button {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+    font-size: 20px;
+    background-color: #F5F6F8;
+    border: 2px #ECECED solid;
+    border-radius: 10px;
+    transition: .20s;
+    transform: scale3d(1, 1, 1);
+}
+
+button:hover {
+    transform: scale3d(0.98, 0.98, 0.98);
+    transition: .20s;
+    opacity: 0.4;
+}
+
+input {
+    background-color: transparent;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 2px;
+    border-style: solid;
+    border-color: #808080;;
+    font-size: 20px;
+    margin-bottom: 2.5%;
+}
+
+::placeholder {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #808080;
+}
+
+[mode="dark"]:hover {
+    transform: scale(0.98);
+    background-color: #F5F6F8 !important;
+    color: black;
+    border: 2px #E9E9E9 solid;
+    box-shadow: 0 20px 60px rgba(100, 100, 100, 0.8);
+
+    transition: .20s;
+    opacity: 1 !important;
+}
+
+[mode="light"]:hover {
+    transform: scale(0.98);
+    transition: .20s;
+    color: #E2E2E2 !important;
+    background-color: #18181C !important;
+    border: 2px #3C4042 solid !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+}
+
+#logout:hover {
+    border: rgb(243, 35, 35) 2px solid !important;
+    opacity: 1 !important;
+}

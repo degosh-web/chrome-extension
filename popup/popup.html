@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/additional/jquery-3.6.0.min.js"></script>
+	<script src="./popup.js"></script>
+    <script src="../options/settings/scripts/inexAll.js"></script>
+    <input style="display: none;" type="file" name="import" id="uploadAll" accept="application/degosh">
+    <!-- <link rel="stylesheet" href="darkmode.css"> -->
+</head>
+
+<body>
+    <img src="../imgs/logo.svg" id="logo">
+    <div class="content">
+        <div id="selectDiv" class="container">
+            <!--
+            <select id="profilesSelect">
+                <option value="-1" hidden>Choose a profile for autofilling</option>
+            </select>
+            -->
+
+            <div class="select-box">
+
+                <div class="container-options">
+           
+                </div>
+
+                <div class="selected">
+                    Choose a profile
+                </div>
+
+            </div>
+
+        </div>
+        <div id="controller">
+            <button id="settingsBtn" class="simpleBtn">Settings</button>
+            <button sw="off" id="globalSwitcherBtn" class="switcherBtn space"><i class="fa fa-square" sw="off"></i>Global switcher</button>
+            <button id="importAll" class="simpleBtn">Import all</button>
+        </div>
+    </div>
+</body>
+
+</html>

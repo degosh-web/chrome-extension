@@ -1,0 +1,218 @@
+html, body {
+    margin: 0;
+    font-family: 'Roboto';
+}
+
+body {
+    position: relative;
+    background-color: #F5F6F8;
+    width: 800px;
+    height: 400px;
+    border-radius: 10px ;
+}
+
+::placeholder {
+    font-size: 25px;
+}
+
+::selection {
+    background: transparent;
+}
+
+#logo {
+    position: absolute;
+    height: 50px;
+    top: 0;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+.content {
+    position: absolute;
+    /*background-color: white;*/
+    background-color: #F5F6F8;
+    border-radius: 10px;
+    height: 305px;
+    width: 725px;
+    margin-left: 4.5%;
+    margin-top: 7.5%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#selectDiv {
+    margin-top: 2.5%;
+}
+
+.space {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+select, input {
+    outline: none;
+}
+
+button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    font-size: 20px;
+    /*background-color: #F5F6F8 ;*/
+    background-color: white !important;
+    border: 2px #ECECED  solid;
+    border-radius: 10px;
+    opacity: 0.2s
+}
+
+button:hover {
+    transform: scale(0.98);
+    transition: .20s;
+    opacity: 0.4;
+}
+
+#controller {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.5%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 90%;
+    display: flex;
+}
+
+#controller .simpleBtn {
+    flex: 1;
+}
+
+#controller .switcherBtn {
+    flex: 2;
+}
+
+i {
+    float: left;
+    position: absolute;
+    left: 2.5%;
+    flex: 1;
+}
+
+i[sw="off"] {
+    border-radius: 5px;
+    color: #C4C4C4;
+}
+
+i[sw="on"] {
+    border-radius: 5px;
+    color: #3BEB4C;
+}
+
+/*селект - переместить в другой файл*/
+.select-box {
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    flex-direction: column;
+    bottom: 0;
+}
+  
+.container-options {
+    border: 2px #ECECED solid !important
+}
+
+.select-box .container-options {
+    background: /*#F5F6F8*/ white;
+    color: black;
+    font-size: 20px;
+    /*color: #fff;*/
+    max-height: 0;
+    /*width: 100%;*/
+    opacity: 0;
+    transition: all 0.4s;
+    border-radius: 10px;
+    overflow: hidden;
+
+    order: 1;
+}
+
+.selected {
+    border: 2px #ECECED solid;
+    background-color: white !important;
+    border-radius: 10px;
+
+    margin-bottom: 5px;
+    transition: .2s;
+    /*color: white;*/
+    color: black;
+    font-size: 20px;
+    position: relative;
+    order: 0;
+}
+
+.select-box .option, .selected {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.selected:hover {
+    transform: scale(0.99);
+    transition: .2s;
+    opacity: 0.4;
+}
+
+.selected::after  {
+    content: " ";
+    background: url("/imgs/arrow-down.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    height: 100%;
+    width: 32px;
+    right: 10px;
+    top: 5px;
+    bottom: 5px;
+
+    transition: all .4s;
+}
+
+.select-box .container-options.active {
+    max-height: 150px;
+    opacity: 1;
+    overflow-y: scroll;
+}
+
+.select-box .container-options.active + .selected::after {
+    /*transform-origin: rotateX(180deg);*/
+    transform: rotate(180deg);
+    top: -5px;
+}
+
+.select-box .container-options::-webkit-scrollbar {
+    width: 0px;
+}
+
+.select-box .option, .selected {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.select-box .option:hover {
+	transform: scale(0.98);
+    transition: .2s;
+    opacity: 0.4;
+}
+
+.select-box label {
+    cursor: pointer;
+}
+
+.select-box .option .radio {
+    display: none;
+}

@@ -1,0 +1,332 @@
+#logo {
+    display: none;
+}
+
+html, body {
+    overflow: hidden;
+}
+
+::selection {
+    background: transparent;
+}
+
+input::selection {
+    background: #D6C2FF;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+body {
+    background-color: #F5F6F8;
+    width: 100%;
+    height: 100%;
+}
+
+a, p, label, button, h1, h2, h3, h4 {
+    font-family: 'Roboto';
+}
+
+.content {
+    -webkit-animation: fadeIn .5s;
+    animation: fadeIn .5s;
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0.25;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.25;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.main {
+    background-color: transparent;
+    position: absolute;
+    align-items: center;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    max-height: 1080px;
+    max-width: 1920px;
+    display: flex;
+    flex-direction: column;
+}
+
+/*navigation stuff*/
+
+.header {
+    width: 92%;
+    max-height: 10%;
+    font-size: 30px;
+    line-height: 250%;
+    text-align: right;
+}
+
+
+#logoDiv {
+    flex: 1;
+    position: relative;
+}
+
+#logo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 45px;
+    position: absolute;
+    left: 0;
+}
+
+.header a {
+    cursor: pointer;
+    text-decoration: none;
+    margin: 1%;
+}
+
+.selectedBar {
+    color: #9966FF;
+    border: 0px;
+    border-bottom: 2px;
+    border-style: solid;
+    transition: .15s;
+}
+
+.header a:hover {
+    border: 0px;
+    border-bottom: 2px;
+    border-style: solid;
+    transition: .15s;
+}
+
+.content, .contentProfiles {
+    width: 92% !important;
+    margin-left: 4%;
+    margin-right: 4%;
+    flex: 10;
+    max-height: 87%;
+    margin-bottom: 1%;
+    display: flex;
+    flex-direction: row;
+    gap: 1%;
+}
+
+i {
+    float: left;
+    text-align: right;
+    position: relative;
+    z-index: 0;
+    flex: 1;
+}
+
+i[sw="off"] {
+    border-radius: 5px;
+    color: #C4C4C4;
+}
+
+i[sw="on"] {
+    border-radius: 5px;
+    color: #2AD65A;
+}
+
+button {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre-line;
+}
+
+select, input {
+    font-family: Roboto;
+    outline: none;
+    font-size: 20px;
+    color: black;
+    border-bottom: 2px solid black;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    scroll-behavior: smooth;
+    background: transparent;
+}
+
+::placeholder, select, option {
+    color: rgb(167, 167, 167);
+    font-weight: 500;
+}
+
+select {
+    -webkit-appearance: menulist-button;
+    color: black;
+}
+
+select:invalid {
+    color: rgb(167, 167, 167);
+}
+
+#footerDiv {
+    position: absolute;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    margin-bottom: 2%;
+    text-align: center;
+    font-size: 12px;
+}
+
+.normalFooter {
+    cursor: default;
+    color: black;
+    font-weight: 100;
+    font-style: italic;
+    opacity: 0.5;
+}
+
+.boldFooter {
+    font-weight: 800;
+    font-style: italic;
+    color: #9966FF;
+    opacity: 0.5;
+    transition: 0.2s;
+    cursor: pointer;
+    outline: none;
+}
+
+.boldFooter:hover {
+    opacity: 1;
+    transition: 0.2s;
+    outline: none;
+}
+
+@media (max-width: 1200px) {
+    .showExtra {
+        display: none;
+    }
+    .placeholder, .setting {
+        position: absolute;
+        height: 92%;
+        width: 100%;
+        bottom: 0;
+    }
+}
+
+/*modal windows stuff*/
+.modal {
+    display: none;
+	position: fixed; 
+	z-index: 1; 
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%; 
+	background: rgb(17, 17, 17, .65);
+	border-radius: 10px;
+    transition: 0.2s;
+}
+
+.modalContent {
+	background-color: #fff;
+    margin: 15% auto; /* 15% from the top and centered */
+	padding: 20px;
+	border: 2px #ECECED solid;
+	width: 50%; /* Could be more or less, depending on screen size */
+
+	border-radius: 10px;
+
+	display: flex;
+	flex-direction: column;
+    transition: 0.2s;
+}
+
+#modalTextDiv {
+	flex: 1;
+	margin-bottom: 5%;
+}
+
+#modalTextDiv p {
+	font-size: 20px;
+	color: black;
+	text-align: center;
+}
+
+#modalActionBtnsDiv {
+	flex: 1;
+	align-items: center;
+	text-align: center;
+	bottom: 0;
+	display: flex;
+	flex-direction: row;
+    transition: 0.2s;
+}
+
+#modalDummyDiv {
+	flex: 1;
+	margin-bottom: 5%;
+}
+
+#yesBtnDiv {
+	flex: 1;
+	margin-left: 1%;
+    transition: 0.2s;
+}
+
+#noBtnDiv {
+	flex: 1;
+	margin-right: 1%;
+    transition: 0.2s;
+}
+
+.modalBtn {
+    font-size: 20px;
+	width: 70%;
+	padding: 10px;
+	padding-left: 10%;
+	padding-right: 10%;
+	border-radius: 10px;
+	color: black;
+	margin-left: 15%;
+	margin-right: 15%;
+    background-color: #F5F6F8;
+    border: 2px #ECECED solid;
+    transition: 0.2s;
+
+    /*
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 10px;
+    */
+}
+
+.modalBtn:hover {
+    transform: scale(0.98);
+    opacity: 0.4;
+    transition: 0.2s;
+}
+
+#exitAppYesBtn:hover {
+    transform: scale(0.98);
+    transition: .20s;
+    border: rgb(243, 35, 35) 2px solid !important;
+    opacity: 1 !important;
+    transition: 0.2s;
+}

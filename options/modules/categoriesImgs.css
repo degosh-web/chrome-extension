@@ -1,0 +1,79 @@
+.category, .module {
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: contain;
+    /*background-clip: padding-box;*/
+    background-attachment:local;
+}
+
+#Clothes {
+    background-image: url('../../imgs/shoes.svg');
+}
+
+#Bots {
+    background-image: url('../../imgs/bots.svg');
+}
+
+#Tech {
+    background-image: url('../../imgs/tech.svg');
+}
+
+#supreme {
+    background-image: url('../../imgs/supreme.svg');
+}
+
+#kith {
+    background-image: url('../../imgs/kith.svg');
+}
+
+#tsum {
+    background-image: url('../../imgs/tsum.svg');
+}
+
+#adidas {
+    background-image: url('../../imgs/adidas.svg');
+}
+
+#shopify {
+    background-image: url('../../imgs/shopify.svg');
+}
+
+#sneakerhead {
+    background-image: url('../../imgs/sneakerhead.svg');
+}
+
+#dns {
+    background-image: url('../../imgs/dns.svg');
+}
+
+#lamoda {
+    background-image: url('../../imgs/lamoda.svg');
+}
+
+#stripe {
+    background-image: url('../../imgs/stripe.svg');
+}
+
+#belief {
+    background-image: url('../../imgs/belief.svg');
+}
+
+#soto {
+    background-image: url('../../imgs/soto.svg');
+}
+
+#naked {
+    background-image: url('../../imgs/nakedLogo.svg');
+}
+
+#solebox {
+    background-image: url('../../imgs/soleboxLogo.svg');
+}
+
+#yoomoney {
+    background-image: url('../../imgs/yoomoney.svg');  
+}
+
+#streetbeat {
+    background-image: url('../../imgs/streetbeat.svg');
+}
