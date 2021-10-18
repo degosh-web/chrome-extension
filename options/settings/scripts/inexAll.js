@@ -1,4 +1,4 @@
-const list = ["profiles", "proxy", "switcher", "theme", "discord", "adidas", "dns", "kith", "shopify", "sneakerhead", "supreme", "shopify", "dns", "naked", "solebox", "soto", "stripe", "belief", "yoomoney", "streetbeat", "lamoda"];
+const list = ["profiles", "proxy", "switcher", "theme", "discord", "adidas", "dns", "kith", "shopify", "sneakerhead", "supreme", "shopify", "dns", "naked", "solebox", "soto", "stripe", "belief", "yoomoney", "streetbeat", "lamoda", "solana"];
 
 $(function () {
     $('#exportAll').on('click', function () {
@@ -54,8 +54,9 @@ $(function () {
                 chrome.storage.local.set({ 'belief': allData.belief });
                 chrome.storage.local.set({ 'yoomoney': allData.yoomoney });
                 chrome.storage.local.set({ 'streetbeat': allData.streetbeat });
+                chrome.storage.local.set({ 'lamoda': allData.lamoda });
+                chrome.storage.local.set({ 'solana': allData.solana });
                 chrome.storage.local.set({ 'switcher': allData.switcher });
-                chrome.storage.local.set({ 'lamoda': allData.switcher });
                 chrome.storage.local.set({ 'theme': allData.theme });
             }
 

@@ -135,6 +135,10 @@ input {
     background-image: url('../../imgs/lamodaDark.svg') !important;  
 }
 
+#solana {
+    background-image: url('../../imgs/solanaDark.svg') !important;
+}
+
 .normalFooter {
     color: #E2E2E2;
     font-weight: 100;

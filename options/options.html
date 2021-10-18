@@ -23,6 +23,7 @@
         <div class="header">
             <a nav id="profilesLink">Profiles</a>
             <a nav id="modulesLink">Modules</a>
+            <!-- <a nav id="customLink">Custom</a> -->
             <a nav id="settingsLink">Settings</a>
         </div>
 
@@ -173,6 +174,8 @@
             <div id="siteModulesBar">
                 <div id="btnsContainerRight">
                     <div class="noIdBtnsDiv" style="overflow-y: auto; ">
+                        <span sw="false" class="module" id="solana">Tech</span>
+
                         <span sw="false" class="module" id="adidas">Clothes</span>
 
                         <span sw="false" class="module" id="shopify">Clothes Tech Bots</span>
@@ -249,10 +252,12 @@
                         </div>
                         <div class="supBottom">
                             <div class="bottomSettingDiv">
-                                <button id="supremeAutofill" class="modulesLongBtn">Fill<i class="fa fa-square" sw="off"></i></button>
+                                <button id="supremeAutofill" class="modulesLongBtn">Fill<i class="fa fa-square"
+                                        sw="off"></i></button>
                             </div>
                             <div class="bottomSettingDiv">
-                                <button id="supremeAutocheckout" class="modulesLongBtn">Checkout<i class="fa fa-square" sw="off"></i></button>
+                                <button id="supremeAutocheckout" class="modulesLongBtn">Checkout<i class="fa fa-square"
+                                        sw="off"></i></button>
                             </div>
                             <div class="bottomSettingDiv">
                                 <button class="modulesLongBtn" id="clearCartBtn">Clear cart</button>
@@ -319,9 +324,9 @@
                                 <div id="tableLower">
                                     <button id="adidasSelectAll" class="modulesLongBtn">Select</button>
                                     <button id="adidasUnselectAll" class="modulesLongBtn">Unselect</button>
+                                </div>
                             </div>
-                            </div>
-                            
+
                         </div>
 
                         <div class="adiRight">
@@ -431,6 +436,14 @@
                         <button id="lamodaAutocheckout">Checkout<i class="fa fa-square" sw="off"></i></button>
                     </div>
                 </div>
+
+                <div class="setting" id="solanaModule" style="display: none;">
+                    <script src="./modules/scripts/solana.js"></script>
+                    <div class="row double">
+                        <button id="solanaAutofill">Dublicate<i class="fa fa-square" sw="off"></i></button>
+                        <button id="solanaAutocheckout">Auto minter<i class="fa fa-square" sw="off"></i></button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -509,13 +522,13 @@
                         <div id="yesBtnDiv">
                             <button id="resetProfilesYesBtn" class="modalBtn">Yes</button>
                         </div>
-    
+
                         <div id="noBtnDiv">
                             <button id="resetProfilesNoBtn" class="modalBtn">No</button>
                         </div>
                     </div>
                     <div id="modalDummyDiv">
-    
+
                     </div>
                 </div>
             </div>
@@ -529,17 +542,17 @@
                         <div id="yesBtnDiv">
                             <button id="resetAllYesBtn" class="modalBtn">Yes</button>
                         </div>
-    
+
                         <div id="noBtnDiv">
                             <button id="resetAllNoBtn" class="modalBtn">No</button>
                         </div>
                     </div>
                     <div id="modalDummyDiv">
-    
+
                     </div>
                 </div>
             </div>
-            
+
             <div id="exitAppModal" class="modal">
                 <div class="modalContent">
                     <div id="modalTextDiv">
@@ -549,13 +562,13 @@
                         <div id="yesBtnDiv">
                             <button id="exitAppYesBtn" class="modalBtn">Yes</button>
                         </div>
-    
+
                         <div id="noBtnDiv">
                             <button id="exitAppNoBtn" class="modalBtn">No</button>
                         </div>
                     </div>
                     <div id="modalDummyDiv">
-    
+
                     </div>
                 </div>
             </div>

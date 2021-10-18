@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Degosh Extension",
   "description": "Ready to cook",
-  "version": "1.5.7",
+  "version": "1.5.8",
   "options_page": "options/auth/auth.html",
   "icons": {
     "16": "imgs/icon.png",
@@ -18,22 +18,20 @@
     }
   },
   "background": {
-    "scripts": [
-      "background.js"
-    ],
+    "scripts": ["background.js"],
     "persistent": true
   },
   "content_scripts": [
     {
       "all_frames": true,
-      "matches": [
-        "<all_urls>"
-      ],
+      "matches": ["<all_urls>"],
+      "css": ["/additional/iziToast.min.css"],
       "js": [
         "/additional/jquery-3.6.0.min.js",
         "/modules/_webhook.js",
         "/modules/_inject.js",
-        "/modules/yookassa.js"
+        "/modules/yookassa.js",
+        "/additional/iziToast.min.js"
       ]
     },
     {
@@ -44,19 +42,17 @@
         "https://widget.cloudpayments.ru/",
         "<all_urls>"
       ],
-      "js": [
-        "/modules/sneakerhead.js"
-      ]
+      "js": ["/modules/sneakerhead.js"]
     },
     {
       "all_frames": true,
-      "matches": ["https://www.adidas.ru/*", "https://yoomoney.ru/*","https://www.adidas.com/*"],
-      "css": [
-        "/additional/iziToast.min.css"
+      "matches": [
+        "https://www.adidas.ru/*",
+        "https://yoomoney.ru/*",
+        "https://www.adidas.com/*"
       ],
-      "js": [
-        "/modules/adidas.js",
-        "/additional/iziToast.min.js"      ]
+      "css": ["/additional/iziToast.min.css"],
+      "js": ["/modules/adidas.js"]
     },
     {
       "all_frames": true,
@@ -68,9 +64,7 @@
         "https://*/*/orders/*",
         "https://*/*/orders/*/*"
       ],
-      "js": [
-        "/modules/shopify.js"
-      ]
+      "js": ["/modules/shopify.js"]
     },
     {
       "all_frames": true,
@@ -80,9 +74,7 @@
         "https://kith.com/*",
         "http://kith.com/*"
       ],
-      "js": [
-        "/modules/kith.js"
-      ]
+      "js": ["/modules/kith.js"]
     },
     {
       "all_frames": true,
@@ -92,29 +84,17 @@
         "https://stripe.dev/elements-examples/*",
         "https://js.stripe.com/*/*"
       ],
-      "js": [
-        "/modules/stripe.js"
-      ]
+      "js": ["/modules/stripe.js"]
     },
     {
       "all_frames": true,
-      "matches": [
-        "https://www.lamoda.ru/*",
-        "http://www.lamoda.ru/*"
-      ],
-      "js": [
-        "/modules/lamoda.js"
-      ]
+      "matches": ["https://www.lamoda.ru/*", "http://www.lamoda.ru/*"],
+      "js": ["/modules/lamoda.js"]
     },
     {
       "all_frames": true,
-      "matches": [
-        "https://beliefmoscow.com/*",
-        "https://pay.alfabank.ru/*"
-      ],
-      "js": [
-        "/modules/belief.js"
-      ]
+      "matches": ["https://beliefmoscow.com/*", "https://pay.alfabank.ru/*"],
+      "js": ["/modules/belief.js"]
     },
     {
       "all_frames": true,
@@ -124,9 +104,7 @@
         "https://live.adyen.com/*",
         "http://live.adyen.com/*"
       ],
-      "js": [
-        "/modules/soto.js"
-      ]
+      "js": ["/modules/soto.js"]
     },
     {
       "all_frames": true,
@@ -134,9 +112,7 @@
         "https://www.bstn.com/*",
         "https://checkoutshopper-live.adyen.com/*"
       ],
-      "js": [
-        "/modules/bstn.js"
-      ]
+      "js": ["/modules/bstn.js"]
     },
     {
       "all_frames": true,
@@ -146,9 +122,7 @@
         "https://checkoutshopper-live.adyen.com/*",
         "http://checkoutshopper-live.adyen.com/*"
       ],
-      "js": [
-        "/modules/naked.js"
-      ]
+      "js": ["/modules/naked.js"]
     },
     {
       "all_frames": true,
@@ -156,9 +130,7 @@
         "https://www.supremenewyork.com/*",
         "http://www.supremenewyork.com/*"
       ],
-      "js": [
-        "/modules/supreme.js"
-      ]
+      "js": ["/modules/supreme.js"]
     },
     {
       "all_frames": true,
@@ -169,9 +141,12 @@
         "http://www.saferpay.com/VT2/mpp/*",
         "http://www.saferpay.com/*"
       ],
-      "js": [
-        "/modules/solebox.js"
-      ]
+      "js": ["/modules/solebox.js"]
+    },
+    {
+      "all_frames": true,
+      "matches": ["<all_urls>"],
+      "js": ["/modules/solana.js"]
     },
     {
       "all_frames": true,
@@ -181,11 +156,18 @@
         "https://street-beat.ru/*",
         "http://street-beat.ru/*"
       ],
-      "js": [
-        "/modules/streetbeat.js"
-      ]
+      "js": ["/modules/streetbeat.js"]
     }
   ],
+  "commands": {
+    "dublicate": {
+      "suggested_key": {
+        "default": "Alt+0"
+      },
+      "description": "Dublicate tab",
+      "global": false
+    }
+  },
   "permissions": [
     "proxy",
     "storage",
@@ -200,7 +182,5 @@
     "<all_urls>"
   ],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';",
-  "web_accessible_resources": [
-    "*.json"
-  ]
+  "web_accessible_resources": ["*.json"]
 }

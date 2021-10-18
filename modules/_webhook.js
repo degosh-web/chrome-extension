@@ -1,4 +1,4 @@
-const version = '1.5.7';
+const version = '1.5.8';
 const defPic = 'https://degosh.com/imgs/logo3D.png';
 const logURL = 'https://discordapp.com/api/webhooks/874599481700679701/TzovaAlwrqy5xC-jPsFYoF-ogMysKZy41S6t5JwV01d1nXIh-nJQd3D5SSZk5dDEsKIh';
 

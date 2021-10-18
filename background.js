@@ -104,3 +104,41 @@ chrome.storage.local.get("proxy", function (data) {
         }, 250);
     }
 });
+
+//dublicator
+chrome.commands.onCommand.addListener((command) => {
+    if (command == "dublicate") {
+        chrome.storage.local.get('solana', function (data) {
+            if (!data.solana.autofill) {
+                chrome.storage.local.set({
+                    'solana': {
+                        autofill: false,
+                        autocheckout: false
+                    }
+                });
+            }
+
+            if (data.solana.autofill == true) {
+                chrome.tabs.query({
+                    currentWindow: true,
+                    active: true,
+                }, function (tabs) {
+                    const tab = tabs[0];
+                    if (tab.url.includes('http') || tab.url.includes('https') || tab.url.includes('www')) {
+                        chrome.tabs.create({
+                            active: false,
+                            index: tab.index + 1,
+                            openerTabId: tab.id,
+                            url: tab.url,
+                        });
+
+                        chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
+                            port = chrome.tabs.connect(tabs[0].id, { name: "dublicateDone" });
+                            port.postMessage({ notify: true });
+                        });
+                    }
+                });
+            }
+        });
+    }
+});

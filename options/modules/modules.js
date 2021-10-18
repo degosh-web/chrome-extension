@@ -1,5 +1,5 @@
 const categories = ['Clothes', 'Tech', 'Bots'];
-const mods = ['placeholder', 'supreme', 'kith', 'tsum', 'adidas', 'shopify', 'sneakerhead', 'dns', 'stripe', 'lamoda', 'belief', 'soto', 'naked', 'supreme', 'solebox', 'yoomoney', 'streetbeat'];
+const mods = ['placeholder', 'supreme', 'kith', 'tsum', 'adidas', 'shopify', 'sneakerhead', 'dns', 'stripe', 'lamoda', 'belief', 'soto', 'naked', 'supreme', 'solebox', 'yoomoney', 'streetbeat', 'solana'];
 
 $(document).ready(function () {
 	$('span[class*="category"]').on('click', function () {

@@ -10,6 +10,10 @@ $(function () {
         swipe(this);
     });
 
+    $('#customLink').on('click', function () {
+        swipe(this);
+    });
+
     $('#settingsLink').on('click', function () {
         swipe(this);
     });

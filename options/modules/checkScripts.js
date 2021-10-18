@@ -302,4 +302,24 @@ function modulesStatus() {
             }, 100);
         }
     });
+
+    chrome.storage.local.get("solana", function (data) {
+        if (data.solana) {
+            let activated = 0;
+
+            Object.keys(data.solana).forEach(id => {
+                if (data.solana[id] == "sizeOn" || data.solana[id] == true) {
+                    activated += 1;
+                }
+            });
+
+            setTimeout(function () {
+                if (activated == 0) {
+                    $('[class="module"][id="solana"]').attr('sw', 'false');
+                } else {
+                    $('[class="module"][id="solana"]').attr('sw', 'true');
+                }
+            }, 100);
+        }
+    });
 }
