@@ -36,21 +36,25 @@ function swipe(that) {
 
 function checkKey() {
     chrome.storage.local.get('license', function (key) {
-        fetch('https://dashboard.degosh.com/extension/enter', {
-            method: 'POST',
-            body: new URLSearchParams({
-                key: key.license.replace(/\s/g, '')
-            }),
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
-        })
-            .then(res => res.json())
-            .then((json) => {
-                if (json.giveAccess == "Wrong IP" || json.giveAccess == "No key") {
+        if (key.license) {
+            fetch('https://dashboard.degosh.com/extension/enter', {
+                method: 'POST',
+                body: new URLSearchParams({
+                    key: key.license.replace(/\s/g, '')
+                }),
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
+            })
+                .then(res => res.json())
+                .then((json) => {
+                    if (json.giveAccess == "Wrong IP" || json.giveAccess == "No key") {
+                        window.location.href = "/options/auth/auth.html";
+                    }
+                }).catch(function (err) {
+                    console.log('Something went wrong', err);
                     window.location.href = "/options/auth/auth.html";
-                }
-            }).catch(function (err) {
-                console.log('Something went wrong', err);
-                window.location.href = "/options/auth/auth.html";
-            });
+                });
+        } else {
+            window.location.href = "/options/auth/auth.html";
+        }
     });
 }
