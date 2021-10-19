@@ -18,7 +18,6 @@ chrome.storage.local.get("solana", function (data) {
 });
 
 $(function () {
-
     $('#solanaAutofill').on('click', function () {
         chrome.storage.local.get("solana", function (data) {
             var status = new Object();
@@ -60,6 +59,21 @@ $(function () {
             }
 
             chrome.storage.local.set({ 'solana': status });
+        });
+    });
+
+    $('#gotoshortcuts').on('click', function () {
+        chrome.tabs.query({
+            currentWindow: true,
+            active: true,
+        }, function (tabs) {
+            const tab = tabs[0];
+            chrome.tabs.create({
+                active: true,
+                index: tab.index + 1,
+                openerTabId: tab.id,
+                url: "chrome://extensions/shortcuts"
+            });
         });
     });
 });

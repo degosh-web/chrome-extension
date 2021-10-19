@@ -66,7 +66,6 @@ $(function () {
                 }
             });
 
-
             setTimeout(function () {
                 if (unique) {
                     pushProfile(profile);
@@ -79,7 +78,6 @@ $(function () {
         } else {
             iziProfileNameError()
         }
-
     });
 
     $('#test').on('click', function () {

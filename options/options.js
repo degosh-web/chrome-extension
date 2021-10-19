@@ -1,7 +1,6 @@
 checkKey();
 
 $(function () {
-
     $('#profilesLink').on('click', function () {
         swipe(this);
     });

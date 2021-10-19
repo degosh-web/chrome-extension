@@ -24,50 +24,7 @@ $(document).ready(function () {
 		}
 	});
 
-	const containerOptions = document.querySelector(".container-options");
-
-	const selected = document.querySelector(".selected");
-
-	chrome.storage.local.get('profiles', function (list) {
-		if (list.profiles) {
-			for (var i = 0; i < list.profiles.length; i++) {
-				containerOptions.insertAdjacentHTML('beforeend', 
-				`<div class="option" id="option-${i}">
-					<input type="radio" class="radio" id="${i}" name="category" />
-					<label for="${i}">${(list.profiles[i]).profileName}</label>
-				</div>`);
-
-				if (list.profiles[i].selected == true) {
-					selected.innerHTML = list.profiles[i].profileName
-				}
-			}
-		}
-
-		selected.addEventListener("click", () => {
-			containerOptions.classList.toggle("active");
-		});
-
-		$('div[id^="option"]').on('click', function () {
-			selected.innerHTML = (this).querySelector("label").innerHTML;
-			containerOptions.classList.remove("active");
-
-			for (var i = 0; i < list.profiles.length; i++) {
-				if (this.querySelector("label").innerHTML == list.profiles[i].profileName) {
-					list.profiles[i].selected = true;
-					chrome.storage.local.set({ 'profiles': list.profiles });	
-				}
-
-				if (list.profiles[i].profileName == selected.innerHTML) {
-					list.profiles[i].selected = true;
-					chrome.storage.local.set({ 'profiles': list.profiles });
-				} else {
-					list.profiles[i].selected = false;
-					chrome.storage.local.set({ 'profiles': list.profiles });
-				}
-			}
-		});
-
-    });
+	updateProfiles();
 });
 
 function select(id) {
@@ -105,4 +62,51 @@ function checkModules() {
 		}
 		$('[id="placeholderModule"]').attr('style', 'display: flex');
 	}
+}
+
+function updateProfiles() {
+	const containerOptions = document.querySelector(".container-options");
+
+	const selected = document.querySelector(".selected");
+
+	chrome.storage.local.get('profiles', function (list) {
+		if (list.profiles) {
+			for (var i = 0; i < list.profiles.length; i++) {
+				containerOptions.insertAdjacentHTML('beforeend', 
+				`<div class="option" id="option-${i}">
+					<input type="radio" class="radio" id="${i}" name="category" />
+					<label for="${i}">${list.profiles[i].profileName}</label>
+				</div>`);
+
+				if (list.profiles[i].selected == true) {
+					selected.innerHTML = list.profiles[i].profileName
+				}
+			}
+		}
+
+		selected.addEventListener("click", () => {
+			containerOptions.classList.toggle("active");
+		});
+
+		$('div[id^="option"]').on('click', function () {
+			selected.innerHTML = (this).querySelector("label").innerHTML;
+			containerOptions.classList.remove("active");
+
+			for (var i = 0; i < list.profiles.length; i++) {
+				if (this.querySelector("label").innerHTML == list.profiles[i].profileName) {
+					list.profiles[i].selected = true;
+					chrome.storage.local.set({ 'profiles': list.profiles });	
+				}
+
+				if (list.profiles[i].profileName == selected.innerHTML) {
+					list.profiles[i].selected = true;
+					chrome.storage.local.set({ 'profiles': list.profiles });
+				} else {
+					list.profiles[i].selected = false;
+					chrome.storage.local.set({ 'profiles': list.profiles });
+				}
+			}
+		});
+
+    });
 }
